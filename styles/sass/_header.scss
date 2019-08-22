@@ -1,0 +1,73 @@
+//HEADER STYLES
+
+header {
+  display: flex;
+  justify-content: center;
+  height: 100vh
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.headerBox {
+  width: 50%;
+  height: 50%;
+  background: coral;
+  text-align: center; 
+  color: #fff;
+    h1{
+      padding: 30% 0;
+    }
+}
+
+.headerButtonContainer {
+  display: flex;
+  justify-content: center;
+}
+
+//SECTION ONE & TWO STYLES
+.sectionOneContainer,
+.sectionTwoContainer,
+.sectionThreeContainer {
+  width: 100%;
+  height: 100vh;
+  border: 1px dotted #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sectionOne,
+.sectionTwo {
+  border: 2px solid coral;
+  h2 {
+    color: #fff;
+    text-align: center;
+  }
+  p {
+    color: #fff;
+  }
+}
+
+.sectionOneHeader h2,
+.sectionTwoHeader h2{
+  color: #000;
+}
+
+.sectionOneInput,
+.sectionTwoInput {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputContainer {
+    flex-direction: column;
+
+}
+
+
