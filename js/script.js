@@ -4,19 +4,20 @@
 let personalityQuiz = {
   questions: [
     {
-      title: "What's your personality type?",
+      // title: "What's your personality type?",
       answers: [
         {
           answer: "Im powerful and silly",
           result: "cardiB"
         },
         {
-          answer: "Arrogant, but charming",
-          result: "kanye"
+          // answer: "Ambitious and fierce",
+          result: "beyonce"
         },
         {
-          answer: "Ambitious and fierce",
-          result: "beyonce"
+
+          // answer: "Arrogant, but charming",
+          result: "kanye"
         },
       ]
     },
@@ -24,15 +25,15 @@ let personalityQuiz = {
       title: "Pick a colour that represents you",
       answers: [
         {
-          answer: "red",
+          // answer: "red",
           result: "cardiB"
         },
         {
-          answer: "purple",
+          // answer: "purple",
           result: "beyonce"
         },
         {
-          answer: "blue",
+          // answer: "blue",
           result: "Kanye",
         },
       ]
@@ -61,6 +62,12 @@ descriptions = [
   }
 ]
 
+const descriptionsObject = {
+  cardiB: "Cardi B \n You're a powerful, confident badass who turns heads any time you walk in a room. You have a natural charm that people gravitate towards — once you've hooked them in, they don't want to escape!",
+  beyonce: "Beyonce \n You're a fierce, ambitious person with a kind heart. You never give up on your friends, and you always stick by the ones you love.",
+  kanye: "Kanye West \n Extremely intelligent and very smart, there's a whole lot more to you then some people realize. Being different doesn't scare you. You love to be the center of attention."
+}
+
 //wait for the document to be ready
 $(document).ready(function () {
 
@@ -73,12 +80,17 @@ $(document).ready(function () {
     //save the users choice as variables
     const userPersonalityType = $('input[name="personalityType"]:checked').val();
     const userColourType = $('input[name ="colourType"]:checked').val();
-    // console.log(userColourType);
+    console.log(userPersonalityType);
+    console.log(userColourType);
 
     //select appropriate array from questions object based on user choice
+    const userChoice = [];
 
-    const celebrityArray = personalityQuiz[userPersonalityType];
-    console.log(celebrityArray);
+    userChoice.push(userPersonalityType, userColourType);
+    console.log(userChoice);
+
+    // const celebrityArray = personalityQuiz[userPersonalityType];
+    // console.log(celebrityArray);
 
 
     //check the user's choices array for the most frequent string
@@ -88,35 +100,39 @@ $(document).ready(function () {
     let beyonce = 0
     let kanye = 0
 
-    const userChoice = [];
 
-    for (i = 0; i < celebrityArray.length; i++) {
-      if (userPersonalityType[i] === 'cardiB' && userColourType[i] === 'cardiB') {
-        cardiB++ ,
-          userChoice.append(celebrityArray[i].descriptions);
+    for (i = 0; i < userChoice.length; i++) {
+
+      console.log(userChoice[i]);
+      //
+      if (userChoice[i] === 'cardiB') {
+        cardiB++
+        // userChoice.append(celebrityArray[i].descriptions);
       }
-      else if (userPersonalityType[i] === 'beyonce' && userColourType[i] === 'beyonce') {
-        beyonce++ ,
-          userChoice.append(celebrityArray[i].descriptions);;
+      else if (userChoice[i] === 'beyonce') {
+        beyonce++
+        // userChoice.append(celebrityArray[i].descriptions);
       }
-      else if (userPersonalityType[i] === 'kanye' && userColourType[i] === 'kanye') {
-        kanye++ ,
-          userChoice.append(celebrityArray[i].descriptions);
+      else if (userChoice[i] === 'kanye') {
+        kanye++
+        // userChoice.append(celebrityArray[i].descriptions);
       }
     }
+
+    console.log(cardiB, beyonce, kanye);
 
     //use frequent string from the array, search the people array to find matching celebrity
 
-    if (cardiB > beyonce && cardi > kanye) {
+    if (cardiB > beyonce && cardiB > kanye) {
       descriptions = 0;
+      //you get cardiB
+      console.log(descriptionsObject.cardiB);
     }
-
-    if (beyonce > cardiB && beyonce > kanye) {
-      descriptions = 1;
+    else if (beyonce > cardiB && beyonce > kanye) {
+      console.log(descriptionsObject.beyonce);
     }
-
-    if (kanye > beyonce && kanye > cardiB) {
-      descriptions = 2;
+    else {
+      console.log(descriptionsObject.kanye);
     }
 
     // print title of celebrity image onto the page
