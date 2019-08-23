@@ -33,7 +33,7 @@ let personalityQuiz = {
         },
         {
           answer: "blue",
-          result: "Kanye"
+          result: "Kanye",
         },
       ]
     },
@@ -61,9 +61,6 @@ descriptions = [
   }
 ]
 
-
-
-
 //wait for the document to be ready
 $(document).ready(function () {
 
@@ -78,60 +75,53 @@ $(document).ready(function () {
     const userColourType = $('input[name ="colourType"]:checked').val();
     // console.log(userColourType);
 
-
     //select appropriate array from questions object based on user choice
 
     const celebrityArray = personalityQuiz[userPersonalityType];
     console.log(celebrityArray);
 
 
-    const userInput = [];
+    //check the user's choices array for the most frequent string
+    //find the highest occurence in responses using for loop; use conditions
 
     let cardiB = 0
     let beyonce = 0
     let kanye = 0
 
-
-    //check the user's choices array for the most frequent string
     const userChoice = [];
-    for (i = 0; i < userChoice.length; i++) {
-      if (userChoice[i] === 'cardiB') {
-        cardiB++
+
+    for (i = 0; i < celebrityArray.length; i++) {
+      if (userPersonalityType[i] === 'cardiB' && userColourType[i] === 'cardiB') {
+        cardiB++ ,
+          userChoice.append(celebrityArray[i].descriptions);
       }
-      if (userChoice[i] === 'Beyonce') {
-        beyonce++
+      else if (userPersonalityType[i] === 'beyonce' && userColourType[i] === 'beyonce') {
+        beyonce++ ,
+          userChoice.append(celebrityArray[i].descriptions);;
       }
-      if (userChoice[i] === 'Kanye') {
-        kanye++
+      else if (userPersonalityType[i] === 'kanye' && userColourType[i] === 'kanye') {
+        kanye++ ,
+          userChoice.append(celebrityArray[i].descriptions);
       }
     }
 
+    //use frequent string from the array, search the people array to find matching celebrity
 
     if (cardiB > beyonce && cardi > kanye) {
-      //do something!
+      descriptions = 0;
     }
 
-    if (cardiB < beyonce && cardi < kanye) {
-      //do something!
+    if (beyonce > cardiB && beyonce > kanye) {
+      descriptions = 1;
     }
 
-    if (cardiB > beyonce && cardi < kanye) {
-      //do something!
-    }
-    if (cardiB < beyonce && cardi > kanye) {
-      //do something!
+    if (kanye > beyonce && kanye > cardiB) {
+      descriptions = 2;
     }
 
-
-    //for each item in the array find out if it matches the user's choice
-
+    // print title of celebrity image onto the page
+    // $('.results').html(`${}`);
 
   });
-
 });
-//use frequent string from the array, search the people array to find matching celebrity
 
-
-
-  // print title of celebrity image onto the page
-//create an array of questions, answers and results in an array within object
