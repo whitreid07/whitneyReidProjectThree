@@ -280,7 +280,6 @@ header {
 
 .sectionOne h2,
 .sectionTwo h2 {
-  color: #fff;
   text-align: center;
 }
 
@@ -310,6 +309,10 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.sectionThreeContainer h2 {
+  color: #000;
 }
 
 h2 {

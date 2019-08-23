@@ -46,7 +46,7 @@ header {
 .sectionTwo {
   border: 2px solid coral;
   h2 {
-    color: #fff;
+    // color: #fff;
     text-align: center;
   }
   p {
@@ -68,6 +68,10 @@ header {
 .inputContainer {
     flex-direction: column;
 
+}
+
+.sectionThreeContainer h2{
+  color: #000;
 }
 
 

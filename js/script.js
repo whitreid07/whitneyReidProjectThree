@@ -45,7 +45,7 @@ let personalityQuiz = {
 //four celebrities
 // results: ["CardiB", "Beyonce", "Kanye"],
 
-descriptions = [
+const descriptions = [
   {
 
     //Cardi B
@@ -124,19 +124,23 @@ $(document).ready(function () {
     //use frequent string from the array, search the people array to find matching celebrity
 
     if (cardiB > beyonce && cardiB > kanye) {
-      descriptions = 0;
+      // descriptions = 0;
       //you get cardiB
-      console.log(descriptionsObject.cardiB);
+      // console.log(descriptionsObject.cardiB);
+      // print title of celebrity image onto the page
+      $('.sectionThreeContainer').html(`<h2>${descriptions[0].celebrity}</h2>`);
     }
     else if (beyonce > cardiB && beyonce > kanye) {
-      console.log(descriptionsObject.beyonce);
+      // descriptions = 1;
+      // console.log(descriptionsObject.beyonce);
+      $('.sectionThreeContainer').html(`<h2>${descriptions[1].celebrity}</h2>`);
     }
     else {
       console.log(descriptionsObject.kanye);
+      $('.sectionThreeContainer').html(`<h2>${descriptions[2].celebrity}</h2>`);
     }
 
-    // print title of celebrity image onto the page
-    // $('.results').html(`${}`);
+
 
   });
 });
