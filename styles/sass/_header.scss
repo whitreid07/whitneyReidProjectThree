@@ -6,6 +6,8 @@ header {
   height: 100vh;
   background-image: url('../images/headerBackground.png');
   background-repeat: no-repeat;
+  background-position: 100% 0px;
+  background-size: cover;
 }
 
 .headerContainer {
@@ -16,21 +18,24 @@ header {
 }
 
 .headerBox {
-  width: 700px;
-  height: 600px;
+  width: 720px;
+  height: 580px;
   background: #fff;
   text-align: center; 
   color: #fff;
-  border: 1px dotted #000;
+  opacity: 0.8;
+  border-radius: 100px;
     h1{
-      padding: 10% 20% 10%;
+      padding: 7% 20% 10%;
       color: #000;
       font-family: 'Barrio', cursive;
       line-height: 1;
-      font-size: 3.1rem;
+      font-size: 2.9rem;
     }
     p {
       color: #000;
+      padding: 0 7%;
+      padding-bottom: 7%;
     }
 }
 
@@ -43,4 +48,13 @@ header {
 .headerButtonContainer {
   display: flex;
   justify-content: center;
+}
+
+.headerButton{
+   background: purple;
+   border: 1px solid purple;
+   text-transform: uppercase;
+   width: 250px;
+   height: 50px;
+   color: #fff;
 }

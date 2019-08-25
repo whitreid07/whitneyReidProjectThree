@@ -214,6 +214,15 @@ fieldset {
   width: 85%;
 }
 
+:focus {
+  -webkit-box-shadow: 0 0 0 0.5px #ffffff, 0 0 3px 5px #3a97f9;
+          box-shadow: 0 0 0 0.5px #ffffff, 0 0 3px 5px #3a97f9;
+}
+
+.sectionOneHoverOne:focus {
+  outline: 10px solid purple;
+}
+
 header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -224,6 +233,8 @@ header {
   height: 100vh;
   background-image: url("../images/headerBackground.png");
   background-repeat: no-repeat;
+  background-position: 100% 0px;
+  background-size: cover;
 }
 
 .headerContainer {
@@ -239,24 +250,27 @@ header {
 }
 
 .headerBox {
-  width: 700px;
-  height: 600px;
+  width: 720px;
+  height: 580px;
   background: #fff;
   text-align: center;
   color: #fff;
-  border: 1px dotted #000;
+  opacity: 0.8;
+  border-radius: 100px;
 }
 
 .headerBox h1 {
-  padding: 10% 20% 10%;
+  padding: 7% 20% 10%;
   color: #000;
   font-family: 'Barrio', cursive;
   line-height: 1;
-  font-size: 3.1rem;
+  font-size: 2.9rem;
 }
 
 .headerBox p {
   color: #000;
+  padding: 0 7%;
+  padding-bottom: 7%;
 }
 
 .headerSecondParagraph {
@@ -273,16 +287,19 @@ header {
           justify-content: center;
 }
 
-h2 {
+.headerButton {
+  background: purple;
+  border: 1px solid purple;
+  text-transform: uppercase;
+  width: 250px;
+  height: 50px;
   color: #fff;
 }
 
 .sectionOneContainer,
-.sectionTwoContainer,
-.sectionThreeContainer {
+.sectionTwoContainer {
   width: 100%;
   height: 100vh;
-  border: 1px dotted #000;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -317,7 +334,10 @@ h2 {
 
 .sectionOneContainerOne p,
 .sectionOneContainerTwo p,
-.sectionOneContainerThree p {
+.sectionOneContainerThree p,
+.sectionTwoContainerOne p,
+.sectionTwoContainerTwo p,
+.sectionTwoContainerThree p {
   color: #fff;
   font-size: 1.2rem;
   padding-top: 7%;
@@ -342,6 +362,10 @@ h2 {
   margin-right: 5%;
 }
 
+input[type=radio] {
+  opacity: 0;
+}
+
 .sectionOneHoverOne,
 .sectionOneHoverTwo,
 .sectionOneHoverThree,
@@ -353,14 +377,20 @@ h2 {
   overflow: hidden;
 }
 
-.questionOneSilly img,
-.questionTwoAmbitious img,
-.questionThreeSerious img,
-.questionTwoBlue img {
-  -webkit-transition: -webkit-transform .3s ease;
-  transition: -webkit-transform .3s ease;
-  transition: transform .3s ease;
-  transition: transform .3s ease, -webkit-transform .3s ease;
+.sectionOneHoverOne:focus {
+  border: 2px solid blue;
+}
+
+.sectionOneHoverOne:active,
+.sectionOneHoverTwo:active,
+.sectionOneHoverThree:active,
+.sectionTwoHoverOne:active,
+.sectionTwoHoverTwo:active,
+.sectionTwoHoverThree:active {
+  -webkit-box-shadow: 0 0 0 0.5px #ffffff, 0 0 3px 5px #3a97f9;
+          box-shadow: 0 0 0 0.5px #ffffff, 0 0 3px 5px #3a97f9;
+  outline: 2px dotted transparent;
+  outline-offset: 2px;
 }
 
 .sectionOneHoverOne:hover img,
@@ -369,27 +399,94 @@ h2 {
 .sectionTwoHoverOne:hover img {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
 }
 
 .questionOneSillyParagraph,
 .questionTwoAmbitiousParagraph,
-.questionThreeSeriousParagraph,
+.questionThreeReservedParagraph,
 .questionTwoBlueParagraph,
 .questionTwoPurpleParagraph,
 .questionTwoRedParagraph {
   text-align: center;
 }
 
+.mainHeaderButton {
+  background: purple;
+  border: 1px solid purple;
+  text-transform: uppercase;
+  width: 250px;
+  height: 50px;
+  color: #fff;
+}
+
+.sectionOneButton {
+  background: purple;
+  border: 1px solid purple;
+  text-transform: uppercase;
+  width: 250px;
+  height: 50px;
+}
+
+.sectionOneButton p {
+  font-size: 1rem;
+  color: #fff;
+  text-align: center;
+  padding: 1% 10%;
+  font-size: 1.2rem;
+}
+
+.headerButton:hover,
+.sectionOneButton:hover,
+.submitContainer input:hover,
+.mainHeaderButton:hover {
+  background: coral;
+  border: 1px solid coral;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.submitContainer input {
+  background: purple;
+  border: 1px solid purple;
+  text-transform: uppercase;
+  color: #fff;
+  width: 200px;
+  height: 50px;
+  font-size: 1.2rem;
+}
+
+.sectionThreeContainer {
+  border: 1px dotted #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .sectionThreeContainer h2 {
   color: #fff;
-  padding: 10% 10%;
+  padding-bottom: 5%;
   text-align: center;
-  margin-top: -15%;
+  margin-top: -5%;
   font-size: 2.8rem;
+  margin-top: 7%;
 }
 
 .sectionThreeContainer p {
-  padding: 0% 10%;
+  padding: 0% 25%;
   padding-bottom: 10%;
   color: #fff;
   text-align: center;

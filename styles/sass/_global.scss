@@ -30,3 +30,11 @@ fieldset {
   width: 85%;
   // border: 2px solid coral; 
 }
+
+:focus {
+   box-shadow: 0 0 0 0.5px #ffffff, 0 0 3px 5px #3a97f9;
+}
+
+.sectionOneHoverOne:focus {
+    outline: 10px solid purple;
+}
