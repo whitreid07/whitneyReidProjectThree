@@ -1,10 +1,3 @@
-// Stripping Styles
-
-body, h1, h2, h3, h4, button, p, li, ul, a, img, fieldset{
-  margin: 0;
-  padding: 0;
-}
-
 /* GENERAL STYLING */
 html {
   font-size: 125%;
@@ -15,6 +8,14 @@ body {
   font-family: 'Lato', sans-serif;
   line-height:32px;
   overflow-x: hidden;
+}
+
+img{
+	width: 100%;
+}
+
+fieldset {
+  border: none;
 }
 
 .wrapperContainer {
@@ -29,5 +30,5 @@ body {
    max-width: 1680px;
   margin: 0 auto;
   width: 85%;
-  // border: 2px solid coral;
+  border: 2px solid coral;
 }

@@ -160,6 +160,11 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   height: 0;
 }
 
+body, h1, h2, h3, h4, button, p, li, ul, a, img, fieldset {
+  margin: 0;
+  padding: 0;
+}
+
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -179,11 +184,6 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   overflow: hidden;
 }
 
-body, h1, h2, h3, h4, button, p, li, ul, a, img, fieldset {
-  margin: 0;
-  padding: 0;
-}
-
 /* GENERAL STYLING */
 html {
   font-size: 125%;
@@ -194,6 +194,14 @@ body {
   font-family: 'Lato', sans-serif;
   line-height: 32px;
   overflow-x: hidden;
+}
+
+img {
+  width: 100%;
+}
+
+fieldset {
+  border: none;
 }
 
 .wrapperContainer {
@@ -207,6 +215,7 @@ body {
   max-width: 1680px;
   margin: 0 auto;
   width: 85%;
+  border: 2px solid coral;
 }
 
 header {
@@ -217,6 +226,8 @@ header {
       -ms-flex-pack: center;
           justify-content: center;
   height: 100vh;
+  background-image: url("../images/headerBackground.png");
+  background-repeat: no-repeat;
 }
 
 .headerContainer {
@@ -232,15 +243,29 @@ header {
 }
 
 .headerBox {
-  width: 50%;
-  height: 50%;
-  background: coral;
+  width: 700px;
+  height: 600px;
+  background: #fff;
   text-align: center;
   color: #fff;
+  border: 1px dotted #000;
 }
 
 .headerBox h1 {
-  padding: 30% 0;
+  padding: 10% 20% 10%;
+  color: #000;
+  font-family: 'Barrio', cursive;
+  line-height: 1;
+  font-size: 3.1rem;
+}
+
+.headerBox p {
+  color: #000;
+}
+
+.headerSecondParagraph {
+  padding: 5% 0;
+  font-weight: 800;
 }
 
 .headerButtonContainer {
@@ -298,10 +323,6 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
 }
 
 .inputContainer {
@@ -313,6 +334,40 @@ header {
 
 .sectionThreeContainer h2 {
   color: #000;
+}
+
+input[type=radio] {
+  opacity: 0;
+}
+
+.SectionOneHoverOne,
+.SectionOneHoverTwo,
+.SectionOneHoverThree {
+  width: 250px;
+  height: 350px;
+  overflow: hidden;
+}
+
+.questionOneSilly img,
+.questionTwoAmbitious img,
+.questionThreeSerious img {
+  -webkit-transition: -webkit-transform .3s ease;
+  transition: -webkit-transform .3s ease;
+  transition: transform .3s ease;
+  transition: transform .3s ease, -webkit-transform .3s ease;
+}
+
+.SectionOneHoverOne:hover img,
+.SectionOneHoverTwo:hover img,
+.SectionOneHoverThree:hover img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.questionOneSillyParagraph,
+.questionTwoAmbitiousParagraph,
+.questionThreeSeriousParagraph {
+  text-align: center;
 }
 
 h2 {

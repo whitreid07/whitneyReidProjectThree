@@ -3,7 +3,9 @@
 header {
   display: flex;
   justify-content: center;
-  height: 100vh
+  height: 100vh;
+  background-image: url('../images/headerBackground.png');
+  background-repeat: no-repeat;
 }
 
 .headerContainer {
@@ -14,14 +16,28 @@ header {
 }
 
 .headerBox {
-  width: 50%;
-  height: 50%;
-  background: coral;
+  width: 700px;
+  height: 600px;
+  background: #fff;
   text-align: center; 
   color: #fff;
+  border: 1px dotted #000;
     h1{
-      padding: 30% 0;
+      padding: 10% 20% 10%;
+      color: #000;
+      font-family: 'Barrio', cursive;
+      line-height: 1;
+      font-size: 3.1rem;
     }
+    p {
+      color: #000;
+    }
+}
+
+
+.headerSecondParagraph {
+  padding: 5% 0;
+  font-weight: 800;
 }
 
 .headerButtonContainer {
@@ -62,7 +78,6 @@ header {
 .sectionOneInput,
 .sectionTwoInput {
   display: flex;
-  flex-direction: column;
 }
 
 .inputContainer {
@@ -73,5 +88,33 @@ header {
 .sectionThreeContainer h2{
   color: #000;
 }
+ input[type=radio] {
+   opacity: 0;
+ }
+
+ .SectionOneHoverOne,
+ .SectionOneHoverTwo,
+ .SectionOneHoverThree {
+   width: 250px;
+   height: 350px;
+   overflow: hidden;
+ }
+
+ .questionOneSilly img,
+ .questionTwoAmbitious img,
+ .questionThreeSerious img{
+   transition: transform .3s ease;
+ }
 
 
+ .SectionOneHoverOne:hover img,
+ .SectionOneHoverTwo:hover img,
+ .SectionOneHoverThree:hover img {
+   transform: scale(1.1); 
+  }
+  
+  .questionOneSillyParagraph,
+  .questionTwoAmbitiousParagraph,
+  .questionThreeSeriousParagraph{
+     text-align: center;
+  }

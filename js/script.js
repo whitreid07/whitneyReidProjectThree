@@ -7,7 +7,7 @@ let personalityQuiz = {
       // title: "What's your personality type?",
       answers: [
         {
-          answer: "Im powerful and silly",
+          // answer: "Im powerful and silly",
           result: "cardiB"
         },
         {
@@ -49,7 +49,8 @@ const descriptions = [
   {
 
     //Cardi B
-    celebrity: "Cardi B \n You're a powerful, confident badass who turns heads any time you walk in a room. You have a natural charm that people gravitate towards — once you've hooked them in, they don't want to escape!"
+    celebrity: "Cardi B \n You're a powerful, confident badass who turns heads any time you walk in a room. You have a natural charm that people gravitate towards — once you've hooked them in, they don't want to escape!",
+    image: "https://media.giphy.com/media/3o751Yxe9UjX26BZbG/giphy.gif"
   },
   {
     //Beyonce 
@@ -65,7 +66,7 @@ const descriptions = [
 const descriptionsObject = {
   cardiB: "Cardi B \n You're a powerful, confident badass who turns heads any time you walk in a room. You have a natural charm that people gravitate towards — once you've hooked them in, they don't want to escape!",
   beyonce: "Beyonce \n You're a fierce, ambitious person with a kind heart. You never give up on your friends, and you always stick by the ones you love.",
-  kanye: "Kanye West \n Extremely intelligent and very smart, there's a whole lot more to you then some people realize. Being different doesn't scare you. You love to be the center of attention."
+  kanye: "Kanye West \n Extremely intelligent and very smart, there's a whole lot more to you then some people realize. Being different doesn't scare you. You love to be the center of attention.",
 }
 
 //wait for the document to be ready
@@ -128,7 +129,8 @@ $(document).ready(function () {
       //you get cardiB
       // console.log(descriptionsObject.cardiB);
       // print title of celebrity image onto the page
-      $('.sectionThreeContainer').html(`<h2>${descriptions[0].celebrity}</h2>`);
+      $('.sectionThreeContainer').html(`<h2>${descriptions[0].celebrity}</h2>
+                                        <img src=${descriptions[0].image} />`);
     }
     else if (beyonce > cardiB && beyonce > kanye) {
       // descriptions = 1;
@@ -136,8 +138,9 @@ $(document).ready(function () {
       $('.sectionThreeContainer').html(`<h2>${descriptions[1].celebrity}</h2>`);
     }
     else {
-      console.log(descriptionsObject.kanye);
-      $('.sectionThreeContainer').html(`<h2>${descriptions[2].celebrity}</h2>`);
+      console.log(descriptionsObject.default);
+      $('.sectionThreeContainer').html(`<h2>${descriptions[2].celebrity}</h2>
+                                          `);
     }
 
 
