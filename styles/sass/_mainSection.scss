@@ -68,8 +68,8 @@
  .sectionTwoHoverOne,
  .sectionTwoHoverTwo,
  .sectionTwoHoverThree {
-  //  width: 250px;
-  //  height: 250px;
+   width: 250px;
+   height: 250px;
    overflow: hidden;
  }
 
@@ -153,7 +153,8 @@
     height: 50px;
      font-size: 1.2rem;
   }
-  .fieldsetSectionOne {
+  .fieldsetSectionOne,
+  .fieldsetSectionTwo {
     display: flex;
     justify-content: space-around;
   }
