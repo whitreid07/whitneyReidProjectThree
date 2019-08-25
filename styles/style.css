@@ -227,10 +227,9 @@ header {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 100vh;
   background-image: url("../images/headerBackground.png");
   background-repeat: no-repeat;
-  background-position: 100% 0px;
+  background-position: center;
   background-size: cover;
 }
 
@@ -254,6 +253,8 @@ header {
   color: #fff;
   opacity: 0.8;
   border-radius: 100px;
+  margin-bottom: 10%;
+  margin-top: 9%;
 }
 
 .headerBox h1 {
@@ -498,6 +499,9 @@ input[type=radio] {
 }
 
 @media only screen and (max-width: 977px) {
+  .headerContainer {
+    background-position: 50%;
+  }
   .headerBox {
     width: 520px;
   }
@@ -517,5 +521,16 @@ input[type=radio] {
   }
   .sectionOneContainer {
     height: 200vh;
+  }
+  .sectionOneContainerOne p,
+  .sectionOneContainerTwo p,
+  .sectionOneContainerThree p,
+  .sectionTwoContainerOne p,
+  .sectionTwoContainerTwo p,
+  .sectionTwoContainerThree p {
+    color: #fff;
+    font-size: 1.2rem;
+    padding-top: 7%;
+    padding-bottom: 15%;
   }
 }
