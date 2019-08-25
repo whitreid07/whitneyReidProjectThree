@@ -35,11 +35,11 @@
               <h2>What's your personality type?</h2>
             </div>
             <fieldset class="sectionOneInput">
-              <div class="sectionOneContainerTwo">
+              <div class="sectionOneContainerOne">
                 <input type="radio" name="personalityType" id="cardiB" value="cardiB" required="required">
                 <label for="cardiB">
-                  <div class="SectionOneHoverOne">
-                    <img class="questionOneSilly" src="images/questionOneSilly.png"
+                  <div class="sectionOneHoverOne">
+                    <img class="questionOneSilly" title="sill and quriky" src="images/questionOneSilly.png"
                       alt="Young asian woman purking lips while eyes closed">
                   </div>
                   <p class="questionOneSillyParagraph">Silly and quirky</p>
@@ -49,21 +49,22 @@
               <div class="sectionOneContainerTwo">
                 <input type="radio" name="personalityType" id="beyonce" value="beyonce" required="required">
                 <label for="beyonce">
-                  <div class="SectionOneHoverTwo">
-                    <img class="questionTwoAmbitious" src="images/questionTwoAmbitious.png" alt="">
+                  <div class="sectionOneHoverTwo">
+                    <img class="questionTwoAmbitious" title="ambitious and fierce" src="images/questionTwoAmbitious.png"
+                      alt="Woman with hand in first and backed turned ">
                   </div>
                   <p class="questionTwoAmbitiousParagraph">Ambitious and fierce</p>
                 </label>
               </div>
 
               <div class="sectionOneContainerThree">
+                <input type="radio" name="personalityType" id="kanye" value="kanye" required="required">
                 <label for="kanye">
-                  <input type="radio" name="personalityType" id="kanye" value="kanye" required="required">
-                  <div class="SectionOneHoverThree">
-                    <img class="questionThreeSerious" src="images/questionThreeSerious.png"
+                  <div class="sectionOneHoverThree">
+                    <img class="questionThreeSerious" title="serious and grouchy" src="images/questionThreeSerious.png"
                       alt="African American young boy looking serious">
                   </div>
-                  <p class="questionThreeSeriousParagraph">Serious and mean</p>
+                  <p class="questionThreeSeriousParagraph">Serious and grouchy</p>
                 </label>
               </div>
             </fieldset>
@@ -71,31 +72,53 @@
               <button class="headerButton-">next question</button>
             </div>
           </section>
+        </div>
 
-          <!--Second Group of Questions -->
+        <!--Second Group of Questions -->
+        <div class="innerWrapper">
           <section class="sectionTwoContainer">
-            <div class="sectionTwoHeader">
-              <h2>Pick a colour that represents you</h2>
+            <div class="sectionOneHeader">
+              <h2>Pick a colour that represents you.</h2>
             </div>
             <fieldset class="sectionTwoInput">
               <div class="sectionTwoContainerOne">
-                <input type="radio" name="colourType" id="cardiB" value="cardiB" required="required">
-                <label for="radio">Blue</label>
+                <input type="radio" name="colourType" id="blue" value="cardiB" required="required">
+                <label for="blue">
+                  <div class="sectionTwoHoverOne">
+                    <img class="questionTwoBlue" title="blue" src="images/questionOneBlue.png" alt="Blue colour square">
+                  </div>
+                  <p class="questionTwoBlueParagraph">Blue</p>
+                </label>
               </div>
+
               <div class="sectionTwoContainerTwo">
-                <input type="radio" name="colourType" id="beyonce" value="beyonce" required="required">
-                <label for="colour">Purple</label>
+                <input type="radio" name="colourType" id="purple" value="beyonce" required="required">
+                <label for="purple">
+                  <div class="sectionTwoHoverTwo">
+                    <img class="questionTwoPurple" title="purple" src="images/questionTwoPurple.png"
+                      alt="Purple colour square">
+                  </div>
+                  <p class="questionTwoPurpleParagraph">Purple</p>
+                </label>
               </div>
-              <div class="sectionTwpContainerThree">
-                <input type="radio" name="colourType" id="kanye" value="kanye" required="required">
-                <label for="radio">Red</label>
+
+              <div class="sectionTwoContainerThree">
+                <input type="radio" name="colourType" id="red" value="kanye" required="required">
+                <label for="red">
+                  <div class="sectionTwoHoverThree">
+                    <img class="questionThreeRed" title="red" src="images/questionThreeRed.png" alt="Red colour square">
+                  </div>
+                  <p class="questionTwoRedParagraph">Red</p>
+                </label>
               </div>
             </fieldset>
             <div class="submit-container">
               <input type="submit" value="Let's go!">
             </div>
           </section>
+
           <div class="sectionThreeContainer">
+            <!-- Dynamtically where results will show! -->
           </div>
       </form>
 

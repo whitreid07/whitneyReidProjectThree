@@ -8,10 +8,8 @@ body {
   font-family: 'Lato', sans-serif;
   line-height:32px;
   overflow-x: hidden;
-}
-
-img{
-	width: 100%;
+  background-image: url('../images/midnightCityBackground.jpg');
+  // background-repeat: no-repeat;
 }
 
 fieldset {
@@ -27,8 +25,8 @@ fieldset {
 }
 
 .innerWrapper {
-   max-width: 1680px;
+   max-width: 1280px;
   margin: 0 auto;
   width: 85%;
-  border: 2px solid coral;
+  // border: 2px solid coral; 
 }

@@ -1,0 +1,119 @@
+//SECTION ONE & TWO STYLES
+.sectionOneContainer,
+.sectionTwoContainer,
+.sectionThreeContainer {
+  width: 100%;
+  height: 100vh;
+  border: 1px dotted #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // margin: 0 5%;
+}
+
+.sectionOne,
+.sectionTwo {
+  // border: 2px solid coral;
+  h2 {
+    // color: #fff;
+    text-align: center;
+  }
+  p {
+    color: #fff;
+  }
+}
+
+.sectionOneHeader h2,
+.sectionTwoHeader h2{
+  font-size: 2rem;
+  color: #fff;
+  padding-bottom: 15%;
+}
+
+.sectionOneContainerOne,
+.sectionOneContainerTwo,
+.sectionOneContainerThree {
+
+  p {
+    color: #fff;
+    font-size: 1.2rem;
+    padding-top: 7%;
+    padding-bottom: 50%;
+  }
+}
+
+.sectionOneInput,
+.sectionTwoInput {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.sectionOneContainerOne,
+.sectionOneContainerTwo,
+.sectionTwoContainerOne,
+.sectionTwoContainerTwo {
+  margin-right: 5%;
+}
+
+ input[type=radio] {
+  //  opacity: 0;
+ }
+
+ .sectionOneHoverOne,
+ .sectionOneHoverTwo,
+ .sectionOneHoverThree,
+ .sectionTwoHoverOne,
+ .sectionTwoHoverTwo,
+ .sectionTwoHoverThree {
+   width: 250px;
+   height: 250px;
+   overflow: hidden;
+ }
+
+ .questionOneSilly img,
+ .questionTwoAmbitious img,
+ .questionThreeSerious img,
+ .questionTwoBlue img{
+   transition: transform .3s ease;
+ }
+
+
+ .sectionOneHoverOne:hover img,
+ .sectionOneHoverTwo:hover img,
+ .sectionOneHoverThree:hover img,
+ .sectionTwoHoverOne:hover img {
+   transform: scale(1.1); 
+  }
+  
+  .questionOneSillyParagraph,
+  .questionTwoAmbitiousParagraph,
+  .questionThreeSeriousParagraph,
+  .questionTwoBlueParagraph,
+  .questionTwoPurpleParagraph,
+  .questionTwoRedParagraph{
+     text-align: center;
+  }
+
+  //SECTION 3 STYLES
+
+  .sectionThreeContainer{
+
+    h2{
+      color: #fff;
+      padding: 10% 10%;
+      text-align: center;
+      margin-top: -15%;
+      font-size: 2.8rem;
+    }
+    p {
+    padding: 0% 10%;
+    padding-bottom: 10%;
+    color: #fff;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 300;
+
+    }
+}
