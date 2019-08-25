@@ -212,15 +212,12 @@ fieldset {
   max-width: 1280px;
   margin: 0 auto;
   width: 85%;
+  border: 2px solid coral;
 }
 
 :focus {
   -webkit-box-shadow: 0 0 0 0.5px #ffffff, 0 0 3px 5px #3a97f9;
           box-shadow: 0 0 0 0.5px #ffffff, 0 0 3px 5px #3a97f9;
-}
-
-.sectionOneHoverOne:focus {
-  outline: 10px solid purple;
 }
 
 header {
@@ -349,7 +346,6 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -359,7 +355,7 @@ header {
 .sectionOneContainerTwo,
 .sectionTwoContainerOne,
 .sectionTwoContainerTwo {
-  margin-right: 5%;
+  margin: 0 5%;
 }
 
 input[type=radio] {
@@ -372,8 +368,6 @@ input[type=radio] {
 .sectionTwoHoverOne,
 .sectionTwoHoverTwo,
 .sectionTwoHoverThree {
-  width: 250px;
-  height: 250px;
   overflow: hidden;
 }
 
@@ -412,6 +406,7 @@ input[type=radio] {
 .questionTwoPurpleParagraph,
 .questionTwoRedParagraph {
   text-align: center;
+  text-transform: capitalize;
 }
 
 .mainHeaderButton {
@@ -459,6 +454,14 @@ input[type=radio] {
   font-size: 1.2rem;
 }
 
+.fieldsetSectionOne {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
 .sectionThreeContainer {
   border: 1px dotted #000;
   display: -webkit-box;
@@ -492,4 +495,27 @@ input[type=radio] {
   text-align: center;
   font-size: 1.5rem;
   font-weight: 300;
+}
+
+@media only screen and (max-width: 977px) {
+  .headerBox {
+    width: 520px;
+  }
+  .headerBox h1 {
+    font-size: 2.5rem;
+  }
+  .fieldsetSectionOne {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .sectionOneContainer {
+    height: 200vh;
+  }
 }
