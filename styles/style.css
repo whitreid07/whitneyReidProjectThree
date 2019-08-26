@@ -290,8 +290,12 @@ header {
 
 .headerBox p {
   color: #000;
-  padding: 0 11%;
+  padding: 0 14%;
   padding-bottom: 7%;
+}
+
+.headerFirstParagraph p {
+  padding: 0 25%;
 }
 
 .headerSecondParagraph {
@@ -411,12 +415,15 @@ input[type="radio"]:checked + label > div {
 
 .questionOneSillyParagraph,
 .questionTwoAmbitiousParagraph,
-.questionThreeReservedParagraph,
+.questionThreeReservedParagraph {
+  text-align: center;
+}
+
 .questionTwoBlueParagraph,
 .questionTwoPurpleParagraph,
 .questionTwoRedParagraph {
-  text-align: center;
   text-transform: capitalize;
+  text-align: center;
 }
 
 .headerButton {
