@@ -1,22 +1,18 @@
-//store in the different variable; maybe choices/results
+
+//create object array to hold questions prompted to the user
 //each set of questions will have a result to each answer
 
 let personalityQuiz = {
   questions: [
     {
-      // title: "What's your personality type?",
       answers: [
         {
-          // answer: "Im powerful and silly",
           result: "cardiB"
         },
         {
-          // answer: "Ambitious and fierce",
           result: "beyonce"
         },
         {
-
-          // answer: "Arrogant, but charming",
           result: "kanye"
         },
       ]
@@ -25,26 +21,19 @@ let personalityQuiz = {
       title: "Pick a colour that represents you",
       answers: [
         {
-          // answer: "red",
           result: "cardiB"
         },
         {
-          // answer: "purple",
           result: "beyonce"
         },
         {
-          // answer: "blue",
-          result: "Kanye",
+          result: "kanye",
         },
       ]
     },
   ],
 }
-
-// questions, results, and personality descriptions
-//four celebrities
-// results: ["CardiB", "Beyonce", "Kanye"],
-
+//this object array will hold the desciption/gifs of each celebrity
 const descriptions = [
   {
 
@@ -56,32 +45,28 @@ const descriptions = [
   {
     //Beyonce 
     celebrity: "Beyonce",
-    celebrityDescription: "You're a fierce, ambitious person with a kind heart. You never give up on your friends, and you always stick by the ones you love.",
+    celebrityDescription: "You're a fierce, ambitious person with a kind heart. You never give up on your dreams, and you always stick by the ones you love no matter what!",
     image: "https://media.giphy.com/media/niKJy6zNnyNpK/giphy.gif"
   },
 
   {
     //Kanye West 
     celebrity: "Kanye West",
-    celebrityDescription: "You like to be the center of attention, but that's only because you see the world in a unique way and want to share it with others.",
-    image: "https://media.giphy.com/media/9qvkhbHg3NOKI/giphy.gif"
+    celebrityDescription: "You like to be the center of attention, but that's only because you see the world in a unique way.",
+    image: "https://media.giphy.com/media/9Xh1CGm4Hzo4g/giphy.gif"
   },
   {
-    //Wild Card
-    celebrity: "Wild Card",
-    celebrityDescription: " Oh, looks like you got the wild choice.",
+    //Wild
+    celebrity: "Wild",
+    celebrityDescription: " Hmmmm, looks like you got the wild option. No celebrity match, try the quiz again!",
     image: "https://media.giphy.com/media/l3q2B4Mlsw4HFpVE4/giphy.gif"
-
   }
-
 ]
-
-
 
 //wait for the document to be ready
 $(document).ready(function () {
 
-  //When button is click move 100vh to next question
+  //When button is click move 100vh to next question; do this for each button
   $('.headerButton').on('click', function () {
     $('html, body').animate({
       scrollTop: $(".sectionOneContainer").offset().top
@@ -108,76 +93,67 @@ $(document).ready(function () {
     //save the users choice as variables
     const userPersonalityType = $('input[name="personalityType"]:checked').val();
     const userColourType = $('input[name ="colourType"]:checked').val();
-    console.log(userPersonalityType);
-    console.log(userColourType);
+    $(`.alert`).remove();
 
     //select appropriate array from questions object based on user choice
     const userChoice = [];
 
     userChoice.push(userPersonalityType, userColourType);
-    console.log(userChoice);
 
-    // const celebrityArray = personalityQuiz[userPersonalityType];
-    // console.log(celebrityArray);
-
-    //check the user's choices array for the most frequent string
-    //find the highest occurence in responses using for loop; use conditions
-
+    // declare variables to set counter
     let cardiB = 0
     let beyonce = 0
     let kanye = 0
 
 
+    //find the highest occurence in responses using for loop; use conditions
     for (i = 0; i < userChoice.length; i++) {
 
-      console.log(userChoice[i]);
-      //
       if (userChoice[i] === 'cardiB') {
         cardiB++
-        // userChoice.append(celebrityArray[i].descriptions);
       }
       else if (userChoice[i] === 'beyonce') {
         beyonce++
-        // userChoice.append(celebrityArray[i].descriptions);
       }
       else if (userChoice[i] === 'kanye') {
         kanye++
-        // userChoice.append(celebrityArray[i].descriptions);
       }
     }
 
-    console.log(cardiB, beyonce, kanye);
-
-    //use frequent string from the array, search the people array to find matching celebrity
+    //use frequent string from the array to find matching celebrity personality
 
     if (cardiB > beyonce && cardiB > kanye) {
-      // descriptions = 0;
-      //you get cardiB
-      // console.log(descriptionsObject.cardiB);
-      // print title of celebrity image onto the page
-      $('.sectionThreeContainer').html(`<h2>${descriptions[0].celebrity}</h2>
-                                        <p>${descriptions[0].celebrityDescription}</p>
-                                        <img src=${descriptions[0].image} />`);
+      // print description and title of cardi b image onto the page
+      $('.sectionThreeContainer').html(`<h2 class="cardiBh2">${descriptions[0].celebrity}</h2>
+                                        <p class="cardiBp">${descriptions[0].celebrityDescription}</p>
+                                        <div class="cardiBgif"><img src=${descriptions[0].image} /></div>`);
     }
     else if (beyonce > cardiB && beyonce > kanye) {
-      // descriptions = 1;
-      // console.log(descriptionsObject.beyonce);
-      $('.sectionThreeContainer').html(`<h2>${descriptions[1].celebrity}</h2>
-                                        <p>${descriptions[1].celebrityDescription}</p>
-                                        <img src=${descriptions[1].image} />`);
+      // print description and title of beyonce image onto the page
+      $('.sectionThreeContainer').html(`<h2 class="beyonceH2">${descriptions[1].celebrity}</h2>
+                                        <p class="beyonceP">${descriptions[1].celebrityDescription}</p>
+                                        <div class="beyonceGif"><img src=${descriptions[1].image} /></div>`);
     }
     else if (kanye > cardiB && kanye > beyonce) {
-      $('.sectionThreeContainer').html(`<h2> ${descriptions[2].celebrity}</h2>
-                                        <p>${descriptions[2].celebrityDescription}</p>
-                                        <img src=${descriptions[2].image} />`);
+      // print description and title of kanye image onto the page
+      $('.sectionThreeContainer').html(`<h2 class="kanyeH2"> ${descriptions[2].celebrity}</h2>
+                                        <p class="kanyeP">${descriptions[2].celebrityDescription}</p>
+                                        <div class="kanyeGif"><img src=${descriptions[2].image} /></div>`);
     }
     else {
-      // console.log(descriptionsObject.default);
-      $('.sectionThreeContainer').html(`<h2> ${descriptions[3].celebrity}</h2>
-                                        <p>${descriptions[3].celebrityDescription}</p>
-                                        <img src=${descriptions[3].image} />`);
+      // print description and title of "wild" image onto the page
+      $('.sectionThreeContainer').html(`<h2 class="wildH2"> ${descriptions[3].celebrity}</h2>
+                                        <p class="wildP">${descriptions[3].celebrityDescription}</p>
+                                        <div class="wildGif"><img src=${descriptions[3].image} /></div>`);
     }
+
+    //Resets the quiz once user sumbits
+    $(".resetButton").on("click", function () {
+      $(window).scrollTop(0);
+    });
 
   });
 });
+
+
 

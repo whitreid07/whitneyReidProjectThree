@@ -212,12 +212,29 @@ fieldset {
   max-width: 1280px;
   margin: 0 auto;
   width: 85%;
-  border: 2px solid coral;
 }
 
 :focus {
   -webkit-box-shadow: 0 0 0 0.5px #ffffff, 0 0 3px 5px #3a97f9;
           box-shadow: 0 0 0 0.5px #ffffff, 0 0 3px 5px #3a97f9;
+}
+
+p > label {
+  display: block;
+}
+
+input[type=radio] {
+  width: 100%;
+}
+
+input:invalid {
+  -webkit-box-shadow: 0 0 5px 1px red;
+          box-shadow: 0 0 5px 1px red;
+}
+
+input:focus:invalid {
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 header {
@@ -233,7 +250,7 @@ header {
   background-size: cover;
 }
 
-.headerContainer {
+.wrapperContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -245,9 +262,13 @@ header {
           align-items: center;
 }
 
+.headerContainer {
+  height: 100vh;
+}
+
 .headerBox {
   width: 720px;
-  height: 580px;
+  height: 650px;
   background: #fff;
   text-align: center;
   color: #fff;
@@ -258,16 +279,18 @@ header {
 }
 
 .headerBox h1 {
-  padding: 7% 20% 10%;
+  padding: 7% 10% 10%;
   color: #000;
-  font-family: 'Barrio', cursive;
+  font-family: 'Chango', cursive;
+  text-transform: capitalize;
   line-height: 1;
-  font-size: 2.9rem;
+  font-size: 2.7rem;
+  text-align: center;
 }
 
 .headerBox p {
   color: #000;
-  padding: 0 7%;
+  padding: 0 11%;
   padding-bottom: 7%;
 }
 
@@ -283,15 +306,6 @@ header {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-.headerButton {
-  background: purple;
-  border: 1px solid purple;
-  text-transform: uppercase;
-  width: 250px;
-  height: 50px;
-  color: #fff;
 }
 
 .sectionOneContainer,
@@ -313,21 +327,14 @@ header {
           align-items: center;
 }
 
-.sectionOne h2,
-.sectionTwo h2 {
-  text-align: center;
-}
-
-.sectionOne p,
-.sectionTwo p {
-  color: #fff;
-}
-
 .sectionOneHeader h2,
 .sectionTwoHeader h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #fff;
   padding-bottom: 15%;
+  text-align: center;
+  line-height: 2.7rem;
+  font-family: 'Roboto', sans-serif;
 }
 
 .sectionOneContainerOne p,
@@ -363,6 +370,10 @@ input[type=radio] {
   opacity: 0;
 }
 
+input[type="radio"]:checked + label > div {
+  border: 3px solid coral;
+}
+
 .sectionOneHoverOne,
 .sectionOneHoverTwo,
 .sectionOneHoverThree,
@@ -374,18 +385,14 @@ input[type=radio] {
   overflow: hidden;
 }
 
-.sectionOneHoverOne:focus {
-  border: 2px solid blue;
-}
-
 .sectionOneHoverOne:active,
 .sectionOneHoverTwo:active,
 .sectionOneHoverThree:active,
 .sectionTwoHoverOne:active,
 .sectionTwoHoverTwo:active,
 .sectionTwoHoverThree:active {
-  -webkit-box-shadow: 0 0 0 0.5px #ffffff, 0 0 3px 5px #3a97f9;
-          box-shadow: 0 0 0 0.5px #ffffff, 0 0 3px 5px #3a97f9;
+  -webkit-box-shadow: 0 0 0 0.5px #ffffff, 0 0 3px 5px #808080;
+          box-shadow: 0 0 0 0.5px #ffffff, 0 0 3px 5px #808080;
   outline: 2px dotted transparent;
   outline-offset: 2px;
 }
@@ -412,19 +419,20 @@ input[type=radio] {
   text-transform: capitalize;
 }
 
-.mainHeaderButton {
-  background: purple;
-  border: 1px solid purple;
-  text-transform: uppercase;
+.headerButton {
+  background: #ff6768;
+  border: 1px solid #ff6768;
+  text-transform: capitalize;
   width: 250px;
   height: 50px;
   color: #fff;
+  font-size: 1.2rem;
 }
 
 .sectionOneButton {
-  background: purple;
-  border: 1px solid purple;
-  text-transform: uppercase;
+  background: #ff6768;
+  border: 1px solid #ff6768;
+  text-transform: capitalize;
   width: 250px;
   height: 50px;
 }
@@ -441,20 +449,41 @@ input[type=radio] {
 .sectionOneButton:hover,
 .submitContainer input:hover,
 .mainHeaderButton:hover {
-  background: coral;
-  border: 1px solid coral;
+  background: #6b778d;
+  border: 1px solid #6b778d;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
-.submitContainer input {
-  background: purple;
-  border: 1px solid purple;
-  text-transform: uppercase;
+.resetButton {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-bottom: 5%;
+}
+
+.submitContainer input,
+.resetButton input {
+  background: #ff6768;
+  border: 1px solid #ff6768;
+  text-transform: capitalize;
   color: #fff;
   width: 200px;
   height: 50px;
   font-size: 1.2rem;
+}
+
+.resetButton input {
+  background: #6b778d;
+  border: 1px solid #6b778d;
+}
+
+.resetButton input:hover {
+  background: #ff6768;
+  border: 1px solid #ff6768;
 }
 
 .fieldsetSectionOne,
@@ -467,7 +496,6 @@ input[type=radio] {
 }
 
 .sectionThreeContainer {
-  border: 1px dotted #000;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -485,23 +513,86 @@ input[type=radio] {
 
 .sectionThreeContainer h2 {
   color: #fff;
-  padding-bottom: 5%;
+  padding-bottom: 4%;
   text-align: center;
-  margin-top: -5%;
-  font-size: 2.8rem;
-  margin-top: 7%;
+  font-size: 2.5rem;
 }
 
 .sectionThreeContainer p {
-  padding: 0% 25%;
-  padding-bottom: 10%;
+  padding-bottom: 5%;
   color: #fff;
   text-align: center;
-  font-size: 1.5rem;
   font-weight: 300;
+  text-align: center;
+}
+
+.cardiBh2 {
+  padding-top: 2%;
+}
+
+.cardiBgif img {
+  margin-left: -10%;
+  width: 120%;
+  padding-bottom: 15%;
+}
+
+.beyonceGif img {
+  margin-left: -19%;
+  width: 130%;
+  padding-bottom: 15%;
+}
+
+.beyonceH2 {
+  padding-top: 2%;
+}
+
+.beyonceP,
+.cardiBp,
+.kanyeP,
+.wildP {
+  padding: 0 29%;
+  font-size: 1.1rem;
+}
+
+.kanyeH2 {
+  margin-top: 3%;
+}
+
+.kanyeGif img {
+  margin-left: -35%;
+  width: 170%;
+  padding-bottom: 15%;
+}
+
+.wildGif img {
+  margin-left: 2%;
+  width: 90%;
+  padding-bottom: 15%;
+}
+
+.wildH2 {
+  margin-top: 3%;
+}
+
+.footerContainer {
+  background: #000;
+  color: #fff;
+  padding: 0.5% 5%;
+  text-align: center;
+}
+
+.footerContainer p {
+  font-size: 0.7rem;
 }
 
 @media only screen and (max-width: 977px) {
+  .headerContainer {
+    height: 100vh;
+  }
+  .headerBox {
+    width: 520px;
+    border-radius: 80px;
+  }
   .headerBox h1 {
     font-size: 2.5rem;
   }
@@ -516,5 +607,119 @@ input[type=radio] {
             flex-direction: column;
     -ms-flex-pack: distribute;
         justify-content: space-around;
+  }
+  .sectionOneContainer,
+  .sectionTwoContainer {
+    height: 145vh;
+  }
+  .sectionOneContainer {
+    padding-top: 30%;
+  }
+  .sectionTwoContainer {
+    margin-top: 50%;
+  }
+  .beyonceH2 {
+    padding-top: 10%;
+  }
+  .sectionOneContainerOne,
+  .sectionOneContainerTwo,
+  .sectionTwoContainerOne,
+  .sectionTwoContainerTwo {
+    margin: 0;
+  }
+  .sectionOneContainerOne p,
+  .sectionOneContainerTwo p,
+  .sectionOneContainerThree p,
+  .sectionTwoContainerOne p,
+  .sectionTwoContainerTwo p,
+  .sectionTwoContainerThree p {
+    color: #fff;
+    font-size: 1.3rem;
+    padding-top: 7%;
+    padding-bottom: 15%;
+  }
+  .sectionOneHeader h2,
+  .sectionTwoHeader h2 {
+    font-size: 2rem;
+    color: #fff;
+    padding-bottom: 15%;
+    text-align: center;
+    line-height: 2.7rem;
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  .headerContainer {
+    height: 100vh;
+  }
+  .headerBox {
+    width: 420px;
+  }
+  .headerBox h1 {
+    font-size: 2rem;
+    padding-top: 15%;
+  }
+  .sectionOneContainer,
+  .sectionTwoContainer {
+    height: 150vh;
+  }
+  .headerBox p {
+    font-size: 0.9rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .headerBox {
+    width: 350px;
+    border-radius: 80px;
+  }
+  .headerBox h1 {
+    font-size: 1.9rem;
+  }
+  .cardiBgif {
+    margin-top: 20%;
+  }
+  .beyonceP,
+  .kanyeP,
+  .wildH2 {
+    padding-top: 60%;
+    text-align: left;
+  }
+}
+
+@media only screen and (max-width: 369px) {
+  .headerBox {
+    width: 300px;
+    height: 569px;
+    border-radius: 80px;
+  }
+  .headerBox h1 {
+    font-size: 1.7rem;
+    padding: 0 2%;
+    padding-top: 25%;
+  }
+  .headerBox p {
+    padding: 0 10%;
+  }
+  .sectionThreeContainer p {
+    padding-bottom: 20%;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .headerContainer {
+    height: 70vh;
+  }
+  .headerBox {
+    margin-top: 15%;
+    width: 250px;
+    height: 570px;
+  }
+  .headerButton {
+    width: 200px;
+    height: 50px;
+    color: #fff;
+    margin-top: 10%;
+    border-radius: 10px;
   }
 }
